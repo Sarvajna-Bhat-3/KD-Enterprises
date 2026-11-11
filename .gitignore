@@ -32,4 +32,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# archives
+*.zip
+*.tar.gz
+*.rar
+
 .env

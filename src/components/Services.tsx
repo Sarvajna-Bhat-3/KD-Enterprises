@@ -50,14 +50,14 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Minimalist Floating Pill Tabs */}
-        <div className="mt-14 flex justify-center">
-          <div className="inline-flex p-1.5 rounded-full bg-slate-100/90 border border-slate-200/80 shadow-inner max-w-full overflow-x-auto">
+        {/* Minimalist Floating Pill Tabs (Mobile & Tablet Smooth Scroll) */}
+        <div className="mt-10 sm:mt-14 flex justify-center w-full">
+          <div className="inline-flex p-1 sm:p-1.5 rounded-full bg-slate-100/90 border border-slate-200/80 shadow-inner max-w-full overflow-x-auto no-scrollbar">
             {serviceCategories.map((cat, idx) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(idx)}
-                className={`relative flex items-center gap-2 px-6 sm:px-8 py-3 rounded-full font-bold text-xs sm:text-sm transition-colors duration-200 cursor-pointer whitespace-nowrap ${
+                className={`relative shrink-0 flex items-center gap-1.5 sm:gap-2 px-4 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm transition-colors duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
                   activeTab === idx ? "text-white" : "text-slate-600 hover:text-slate-950"
                 }`}
               >
@@ -76,7 +76,7 @@ export const Services = () => {
         </div>
 
         {/* Active Panel with Bento Grid Styling */}
-        <div className="mt-14">
+        <div className="mt-8 sm:mt-14">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentCategory.id}
@@ -84,9 +84,9 @@ export const Services = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="bg-slate-50/80 border border-slate-200/90 rounded-[36px] p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+              className="bg-slate-50/80 border border-slate-200/90 rounded-[28px] sm:rounded-[36px] p-5 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                 {/* Left: Info & Sub-services */}
                 <div className="lg:col-span-7 space-y-6">
                   <div>
@@ -101,14 +101,14 @@ export const Services = () => {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {currentCategory.services.map((srv, sIdx) => (
                       <div
                         key={sIdx}
-                        className="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-orange-400 hover:shadow-md transition-all group"
+                        className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-orange-400 hover:shadow-md transition-all group"
                       >
-                        <div className="flex items-start gap-3.5">
-                          <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <div className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                           <div>
                             <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
                               {srv.name}
@@ -123,10 +123,10 @@ export const Services = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-950 hover:bg-slate-800 shadow-md transition-all transform hover:scale-105 active:scale-95"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-950 hover:bg-slate-800 shadow-md transition-all transform hover:scale-105 active:scale-95 text-center"
                     >
                       <span>Request Free Site Estimate</span>
                       <ArrowRight className="w-4 h-4" />
@@ -136,7 +136,7 @@ export const Services = () => {
                       href={companyInfo.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all active:scale-95 text-center"
                     >
                       <MessageCircle className="w-4 h-4 text-emerald-600" />
                       <span>Inquire via WhatsApp</span>
@@ -146,7 +146,7 @@ export const Services = () => {
 
                 {/* Right: Clean Squircle Media Showcase */}
                 <div className="lg:col-span-5 relative">
-                  <div className="relative aspect-[4/3] rounded-[30px] overflow-hidden border-2 border-white shadow-[0_20px_45px_rgba(0,0,0,0.08)] group">
+                  <div className="relative aspect-[4/3] rounded-[24px] sm:rounded-[30px] overflow-hidden border-2 border-white shadow-[0_20px_45px_rgba(0,0,0,0.08)] group">
                     <Image
                       src={currentCategory.image}
                       alt={currentCategory.title}
@@ -155,9 +155,9 @@ export const Services = () => {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-5 left-5 right-5">
-                      <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-slate-200/80 text-xs text-slate-700 shadow-xl">
-                        <strong className="text-slate-950 block text-sm font-black mb-1">
+                    <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5">
+                      <div className="bg-white/95 backdrop-blur-md p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-200/80 text-xs text-slate-700 shadow-xl">
+                        <strong className="text-slate-950 block text-xs sm:text-sm font-black mb-0.5 sm:mb-1">
                           Turnkey Accountability
                         </strong>
                         All installations backed by official warranties, licensed technicians, and direct support from Mihir Gandhi.

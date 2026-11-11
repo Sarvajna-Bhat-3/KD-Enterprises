@@ -17,10 +17,10 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="w-full relative bg-white text-slate-800 pt-24 pb-8 overflow-hidden border-t border-slate-200">
+    <footer className="w-full relative bg-white text-slate-800 pt-16 sm:pt-24 pb-8 overflow-hidden border-t border-slate-200">
       <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 2xl:px-16 relative z-10">
         {/* Top Minimalist 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 pb-12 sm:pb-20">
           {/* Col 1: Platform Statement */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">

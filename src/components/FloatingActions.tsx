@@ -10,19 +10,20 @@ export const FloatingActions = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTooltip(false);
-    }, 8000);
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 select-none">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5 sm:gap-3 select-none">
       {/* Tooltip banner */}
       {showTooltip && (
-        <div className="relative bg-slate-900 border border-slate-700 text-white text-xs px-3.5 py-2 rounded-xl shadow-2xl flex items-center gap-2 max-w-[220px] animate-bounce">
-          <span>Need quick estimation? Chat with us on WhatsApp!</span>
+        <div className="relative bg-slate-900/95 backdrop-blur-md border border-slate-700 text-white text-[11px] sm:text-xs px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl shadow-2xl flex items-center gap-2 max-w-[200px] sm:max-w-[220px] animate-bounce">
+          <span>Need quick estimation? Chat on WhatsApp!</span>
           <button
             onClick={() => setShowTooltip(false)}
-            className="text-slate-400 hover:text-white"
+            className="text-slate-400 hover:text-white p-0.5"
+            aria-label="Dismiss"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -34,11 +35,11 @@ export const FloatingActions = () => {
         {/* Quick Phone Call Button */}
         <a
           href={`tel:${companyInfo.phoneRaw}`}
-          className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 text-orange-400 border border-slate-700 flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95"
+          className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-slate-800 hover:bg-slate-700 text-orange-400 border border-slate-700 flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95"
           title="Direct Phone Call"
           aria-label="Direct Phone Call"
         >
-          <Phone className="w-5 h-5" />
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
         </a>
 
         {/* WhatsApp Button */}
@@ -46,7 +47,7 @@ export const FloatingActions = () => {
           href={companyInfo.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl shadow-emerald-600/40 transition-transform hover:scale-110 active:scale-95 relative"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl shadow-emerald-600/40 transition-transform hover:scale-110 active:scale-95 relative"
           title="Chat on WhatsApp"
           aria-label="Chat on WhatsApp"
         >
@@ -54,7 +55,7 @@ export const FloatingActions = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-300"></span>
           </span>
-          <MessageCircle className="w-7 h-7" />
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7" />
         </a>
       </div>
     </div>
