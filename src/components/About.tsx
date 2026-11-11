@@ -4,160 +4,186 @@ import React from "react";
 import Image from "next/image";
 import { companyInfo } from "@/data/companyData";
 import {
+  ShieldCheck,
   CheckCircle2,
+  ArrowRight,
   Eye,
   Target,
-  Sparkles,
-  Award,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const About = () => {
+  // Flanking Photo Mosaic (Matching frame_008.jpg)
+  const leftCards = [
+    {
+      title: "CCTV & Surveillance",
+      desc: "4K IP Camera Deployment",
+      image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-slow",
+    },
+    {
+      title: "Data Networking",
+      desc: "Cat6 & Rack Infrastructure",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-delayed",
+    },
+    {
+      title: "Structural Civil Works",
+      desc: "RCC Column Retrofitting",
+      image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-fast",
+    },
+  ];
+
+  const rightCards = [
+    {
+      title: "Steel Fabrication",
+      desc: "MS/SS Industrial Trusses",
+      image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-delayed",
+    },
+    {
+      title: "Waterproofing",
+      desc: "Leakage & Membrane Fix",
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-slow",
+    },
+    {
+      title: "Access Control",
+      desc: "Biometrics & Smart Locks",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80",
+      anim: "animate-float-fast",
+    },
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white text-slate-900 relative">
+    <section id="solutions" className="py-24 bg-[#f8fafc] text-slate-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-xs font-bold tracking-widest uppercase">
-            <span>02</span>
-            <span>•</span>
-            <span>ABOUT KD ENTERPRISES</span>
-          </div>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
-            Building Safer Spaces & <br className="hidden sm:inline" />
-            <span className="text-orange-600">Stronger Infrastructure</span>
-          </h2>
-          <div className="w-16 h-1 bg-orange-500 mt-4 rounded-full"></div>
-        </div>
-
-        {/* Content Grid */}
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Story & Details */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-orange-600" />
-                <span>Professionally Managed Contracting & Services</span>
-              </h3>
-
-              <p className="text-slate-700 text-base leading-relaxed">
-                {companyInfo.about.description}
-              </p>
-
-              <p className="mt-4 text-slate-700 text-base leading-relaxed">
-                {companyInfo.about.subDescription}
-              </p>
-
-              {/* Core Strengths Badges */}
-              <div className="mt-6 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="flex items-center gap-2 text-slate-800 text-sm font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
-                  <span>Quality Workmanship</span>
+        {/* Symmetrical Mosaic & Center Content (Matching frame_008.jpg) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Symmetrical Column of Floating Photo Cards */}
+          <div className="lg:col-span-3 hidden lg:flex flex-col gap-6">
+            {leftCards.map((c, i) => (
+              <div
+                key={i}
+                className={`${c.anim} group bg-white p-2.5 rounded-[24px] border border-slate-200/90 shadow-[0_15px_35px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-orange-400 transition-all hover:scale-105 duration-300`}
+              >
+                <div className="relative h-32 w-full rounded-[18px] overflow-hidden">
+                  <Image
+                    src={c.image}
+                    alt={c.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/70 to-transparent backdrop-blur-[1px] flex items-center px-3">
+                    <span className="text-[11px] font-bold text-white">
+                      {c.title}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-slate-800 text-sm font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
-                  <span>Timely Execution</span>
-                </div>
-                <div className="flex items-center gap-2 text-slate-800 text-sm font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
-                  <span>Client Satisfaction</span>
+                <div className="px-2 pt-2 pb-1 text-center">
+                  <span className="text-[10px] font-semibold text-slate-500">
+                    {c.desc}
+                  </span>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Center Column: Core Content (Matching frame_008.jpg) */}
+          <div className="lg:col-span-6 text-center space-y-6 px-2 sm:px-6">
+            {/* Center Little Squircle Icon */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-orange-500/25"
+            >
+              <ShieldCheck className="w-7 h-7" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight"
+            >
+              Integrated multi-trade <br />
+              solutions
+            </motion.h2>
+
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-base sm:text-lg text-slate-600 max-w-md mx-auto leading-relaxed"
+            >
+              Streamline security, networking, civil repairs, and metal fabrication under one centralized partner, eliminating the chaos of multiple sub-contractors.
+            </motion.p>
+
+            {/* Pill CTA Button (Like 'Learn more' in frame_008.jpg) */}
+            <div className="pt-2">
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 transition-all transform hover:scale-105 active:scale-95"
+              >
+                <span>Learn more</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
 
-            {/* Vision & Mission Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Vision Card */}
-              <div className="p-6 rounded-2xl bg-orange-50/40 border border-orange-200/80 hover:border-orange-400 transition-all shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 mb-4">
-                  <Eye className="w-5 h-5" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-orange-600" />
+            {/* Vision & Mission Squircles */}
+            <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                <div className="flex items-center gap-2 text-orange-600 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Eye className="w-4 h-4" />
                   <span>Our Vision</span>
-                </h4>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {companyInfo.about.vision}
                 </p>
               </div>
 
-              {/* Mission Card */}
-              <div className="p-6 rounded-2xl bg-orange-50/40 border border-orange-200/80 hover:border-orange-400 transition-all shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 mb-4">
-                  <Target className="w-5 h-5" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-orange-600" />
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                <div className="flex items-center gap-2 text-orange-600 font-bold text-xs uppercase tracking-wider mb-2">
+                  <Target className="w-4 h-4" />
                   <span>Our Mission</span>
-                </h4>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {companyInfo.about.mission}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Leadership & Visiting Card Spotlight */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Leadership Profile Card */}
-            <div className="bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
-              <div className="h-1.5 w-full bg-gradient-to-r from-orange-500 to-amber-500 absolute top-0 left-0"></div>
-
-              <div className="flex items-center gap-4 mt-2">
-                <div className="w-16 h-16 rounded-2xl bg-orange-600 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-orange-600/30">
-                  MG
+          {/* Right Symmetrical Column of Floating Photo Cards */}
+          <div className="lg:col-span-3 hidden lg:flex flex-col gap-6">
+            {rightCards.map((c, i) => (
+              <div
+                key={i}
+                className={`${c.anim} group bg-white p-2.5 rounded-[24px] border border-slate-200/90 shadow-[0_15px_35px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-orange-400 transition-all hover:scale-105 duration-300`}
+              >
+                <div className="relative h-32 w-full rounded-[18px] overflow-hidden">
+                  <Image
+                    src={c.image}
+                    alt={c.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/70 to-transparent backdrop-blur-[1px] flex items-center px-3">
+                    <span className="text-[11px] font-bold text-white">
+                      {c.title}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-black text-slate-900">
-                    {companyInfo.proprietor}
-                  </h3>
-                  <p className="text-orange-600 font-bold text-sm">
-                    Proprietor & Managing Director
-                  </p>
-                  <p className="text-slate-500 text-xs mt-0.5">
-                    KD Enterprises • Santacruz East, Mumbai
-                  </p>
+                <div className="px-2 pt-2 pb-1 text-center">
+                  <span className="text-[10px] font-semibold text-slate-500">
+                    {c.desc}
+                  </span>
                 </div>
               </div>
-
-              <blockquote className="mt-6 text-slate-700 italic text-sm border-l-2 border-orange-500 pl-4 py-1">
-                &ldquo;We take full ownership of every site we manage — from the smallest surveillance sensor to large-scale structural rehabilitation. Quality and trust are our cornerstones.&rdquo;
-              </blockquote>
-
-              <div className="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
-                <span>Direct Contact:</span>
-                <a
-                  href={`tel:${companyInfo.phoneRaw}`}
-                  className="font-bold text-orange-600 hover:underline"
-                >
-                  {companyInfo.phone}
-                </a>
-              </div>
-            </div>
-
-            {/* Official Card Preview Badge */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
-              <div className="relative w-24 h-16 rounded-lg overflow-hidden border border-slate-300 shrink-0 shadow-sm">
-                <Image
-                  src="/images/kd-card-front.jpg"
-                  alt="KD Enterprises Business Card"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5 text-xs font-bold text-orange-600 uppercase tracking-wide">
-                  <Award className="w-3.5 h-3.5" />
-                  <span>Official Business Card</span>
-                </div>
-                <h4 className="text-sm font-bold text-slate-900 mt-0.5">
-                  KD Enterprises
-                </h4>
-                <p className="text-xs text-slate-500 mt-0.5 italic">
-                  &ldquo;Turning Ideas Into Reality...&rdquo;
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

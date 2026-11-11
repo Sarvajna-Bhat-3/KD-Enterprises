@@ -292,3 +292,57 @@ export const portfolioProjects = [
   },
 ];
 
+export const faqs = [
+  {
+    question: "Do you offer Annual Maintenance Contracts (AMC)?",
+    answer:
+      "Yes, absolutely. KD Enterprises provides comprehensive and non-comprehensive AMCs for CCTV surveillance systems, access control, IT networking, and building civil maintenance to keep your property running smoothly year-round.",
+  },
+  {
+    question: "Which locations in Mumbai and Maharashtra do you serve?",
+    answer:
+      "We operate across Greater Mumbai (Western, Central, and Harbour suburbs), Navi Mumbai, Thane, Palghar, Raigad, and major industrial belts across Maharashtra.",
+  },
+  {
+    question: "Do you provide free on-site inspections and estimates?",
+    answer:
+      "Yes. For commercial premises, housing societies, and industrial plants, our technical team conducts an on-site survey to understand your requirements and provides a transparent, itemized quotation free of obligation.",
+  },
+  {
+    question: "Are the products and equipment backed by manufacturer warranties?",
+    answer:
+      "All equipment—including CCTV cameras, NVRs, network switches, and biometric readers—comes with original manufacturer warranties from our brand partners (Honeywell, Hikvision, Samsung, D-Link, etc.).",
+  },
+  {
+    question: "Can KD Enterprises handle multi-trade works simultaneously?",
+    answer:
+      "Yes! That is our signature strength: 'Multiple Services | One Trusted Partner'. We manage security, cabling, civil repairs, and metal fabrication under a unified project manager so you don't have to coordinate multiple sub-contractors.",
+  },
+];
+
+export const clientReviews = [
+  {
+    name: "Rajesh Parekh",
+    role: "Secretary, Green Meadows CHS",
+    location: "Santacruz West, Mumbai",
+    content:
+      "KD Enterprises completed our society's complete 32-camera IP CCTV upgrade and terrace waterproofing before the monsoons. Mihir Gandhi and his team were professional, transparent with pricing, and completed the job on schedule.",
+    rating: 5,
+  },
+  {
+    name: "Sanjay Mehta",
+    role: "Operations Manager, Apex Logistics",
+    location: "Bhiwandi, Thane",
+    content:
+      "We contracted KD Enterprises for structural fabrication of our mezzanine storage and complete Cat6 network cabling. Exceptional workmanship and attention to structural safety. Highly recommended for commercial works.",
+    rating: 5,
+  },
+  {
+    name: "Anjali Deshmukh",
+    role: "Director, Innovate Tech Solutions",
+    location: "Andheri East, Mumbai",
+    content:
+      "Their biometric access control and server rack setup was smooth and hassle-free. Whenever we have a technical inquiry or need maintenance, their support team responds quickly.",
+    rating: 5,
+  },
+];

@@ -1,160 +1,214 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { companyInfo } from "@/data/companyData";
 import {
   ShieldCheck,
-  Building,
-  Wrench,
-  CheckCircle2,
+  Lightbulb,
+  Building2,
+  Eye,
+  Zap,
   ArrowRight,
-  PhoneCall,
-  Clock,
-  Award,
-  Users,
+  Sparkles,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
-  const highlights = [
-    {
-      icon: ShieldCheck,
-      title: "Security & Surveillance",
-      desc: "HD CCTV, IP cameras & biometric access control systems",
-    },
-    {
-      icon: Building,
-      title: "Civil & Infrastructure",
-      desc: "Structural repairs, waterproofing, painting & RCC works",
-    },
-    {
-      icon: Wrench,
-      title: "Metal Fabrication",
-      desc: "MS/SS fabrication, trusses & custom support frameworks",
-    },
-  ];
-
-  const stats = [
-    { label: "Execution Quality", value: "100%", icon: Award },
-    { label: "Core Verticals", value: "3+", icon: Building },
-    { label: "Brand Partnerships", value: "12+", icon: Users },
-    { label: "Support & Maintenance", value: "24/7", icon: Clock },
-  ];
-
   return (
-    <section id="home" className="relative pt-28 md:pt-36 pb-20 bg-gradient-to-b from-orange-50/50 via-white to-slate-50 text-slate-900 overflow-hidden border-b border-slate-200/60">
-      {/* Background Subtle Gradient Blobs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-400/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section
+      id="home"
+      className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-white text-slate-900 rounded-b-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.03)]"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        {/* TOP INTERACTIVE FLOATING NODE DIAGRAM (Exactly like Dribbble Concept) */}
+        <div className="relative w-full max-w-3xl mx-auto h-[260px] sm:h-[300px] mb-8 select-none flex items-center justify-center">
+          {/* SVG Connector Lines */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 760 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Center to Top-Left */}
+            <path
+              d="M380 150 L275 80"
+              stroke="#E2E8F0"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
+            {/* Center to Bottom-Left */}
+            <path
+              d="M380 150 L275 220"
+              stroke="#E2E8F0"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
+            {/* Center to Top-Right */}
+            <path
+              d="M380 150 L485 80"
+              stroke="#E2E8F0"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
+            {/* Center to Bottom-Right */}
+            <path
+              d="M380 150 L485 220"
+              stroke="#E2E8F0"
+              strokeWidth="2"
+              strokeDasharray="4 4"
+            />
 
-      {/* Grid Pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-          backgroundSize: "24px 24px",
-        }}
-      ></div>
+            {/* Further branch to left photo */}
+            <path d="M275 80 L160 120" stroke="#E2E8F0" strokeWidth="1.5" />
+            <path d="M275 220 L160 180" stroke="#E2E8F0" strokeWidth="1.5" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Tagline Badge */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/80 border border-orange-300 text-orange-700 text-xs sm:text-sm font-bold tracking-wide uppercase">
-            <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
-            {companyInfo.subTagline}
-          </div>
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-semibold shadow-sm">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-            Proprietor: {companyInfo.proprietor}
-          </div>
-        </div>
+            {/* Further branch to right photo & widget */}
+            <path d="M485 80 L600 120" stroke="#E2E8F0" strokeWidth="1.5" />
+            <path d="M485 220 L600 180" stroke="#E2E8F0" strokeWidth="1.5" />
 
-        {/* Main Heading */}
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-950 leading-tight sm:leading-none">
-            Building Safer Spaces & <br />
-            <span className="bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-              Stronger Infrastructure
+            {/* Small Joint Dots */}
+            <circle cx="275" cy="80" r="3.5" fill="#CBD5E1" />
+            <circle cx="275" cy="220" r="3.5" fill="#CBD5E1" />
+            <circle cx="485" cy="80" r="3.5" fill="#CBD5E1" />
+            <circle cx="485" cy="220" r="3.5" fill="#CBD5E1" />
+          </svg>
+
+          {/* 1. CENTER MAIN SQUIRCLE: KD Enterprises Platform Hub */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative z-20 w-24 h-24 sm:w-28 sm:h-28 rounded-[28px] bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 flex flex-col items-center justify-center text-white shadow-[0_20px_40px_rgba(234,88,12,0.35)] hover:scale-105 transition-transform duration-300 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-full border-2 border-white/60 flex items-center justify-center shadow-inner">
+              <ShieldCheck className="w-7 h-7 text-white" />
+            </div>
+            <span className="text-[10px] font-black tracking-widest mt-1 uppercase text-orange-100">
+              KD HUB
             </span>
-          </h1>
+          </motion.div>
 
-          <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Your trusted contracting partner for <strong className="text-slate-900">Security Systems</strong>, <strong className="text-slate-900">Networking & IT</strong>, <strong className="text-slate-900">Civil Works</strong>, and <strong className="text-slate-900">Structural Fabrication</strong> across Mumbai & Maharashtra.
-          </p>
-
-          <p className="mt-2 text-sm text-orange-600 font-bold tracking-wider uppercase">
-            &ldquo;{companyInfo.cardSlogan}&rdquo;
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold text-white bg-orange-600 hover:bg-orange-500 shadow-xl shadow-orange-600/30 hover:shadow-orange-500/50 transition-all transform hover:-translate-y-0.5"
+          {/* 2. TOP-LEFT SQUIRCLE: Yellow Lightbulb (Engineering Ideas) */}
+          <div className="absolute left-[30%] sm:left-[32%] top-[10%] sm:top-[12%] z-10 animate-float-slow">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-400 flex items-center justify-center text-amber-950 shadow-lg shadow-amber-300/30 hover:scale-110 transition-transform"
+              title="Innovative Civil & Engineering Ideas"
             >
-              <span>Get Free Site Inspection & Quote</span>
-              <ArrowRight className="w-5 h-5" />
-            </a>
-
-            <a
-              href={`tel:${companyInfo.phoneRaw}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl text-base font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
-            >
-              <PhoneCall className="w-5 h-5 text-orange-600" />
-              <span>Call: {companyInfo.phone}</span>
-            </a>
+              <Lightbulb className="w-6 h-6" />
+            </div>
           </div>
 
-          <div className="mt-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
-            {companyInfo.coverSlogan}
+          {/* 3. BOTTOM-LEFT SQUIRCLE: Cyan Water/Shield (Waterproofing & Infrastructure) */}
+          <div className="absolute left-[30%] sm:left-[32%] bottom-[10%] sm:bottom-[12%] z-10 animate-float-delayed">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-cyan-400/30 hover:scale-110 transition-transform"
+              title="Waterproofing & Concrete Rehabilitation"
+            >
+              <Building2 className="w-6 h-6" />
+            </div>
           </div>
-        </div>
 
-        {/* 3 Pillar Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {highlights.map((h, i) => {
-            const Icon = h.icon;
-            return (
-              <div
-                key={i}
-                className="group relative bg-white border border-slate-200/90 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 shadow-md shadow-slate-200/50 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="mt-4 text-lg font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
-                  {h.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  {h.desc}
-                </p>
-                <div className="mt-4 flex items-center text-xs font-bold text-orange-600 group-hover:translate-x-1 transition-transform">
-                  <span>Explore capabilities</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Stats Row */}
-        <div className="mt-12 pt-10 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          {stats.map((s, idx) => {
-            const Icon = s.icon;
-            return (
-              <div key={idx} className="flex flex-col items-center">
-                <div className="flex items-center gap-2 text-orange-600 mb-1">
-                  <Icon className="w-4 h-4" />
-                  <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                    {s.value}
-                  </span>
-                </div>
-                <span className="text-xs sm:text-sm text-slate-600 font-semibold">
-                  {s.label}
+          {/* 4. LEFT FLOATING PHOTO: Professional / Site Engineer Card with Glass Blur */}
+          <div className="absolute left-[6%] sm:left-[10%] top-[25%] z-10 hidden sm:block animate-float-fast">
+            <div className="w-24 h-28 rounded-2xl overflow-hidden border-2 border-white shadow-[0_15px_30px_rgba(0,0,0,0.08)] relative group">
+              <Image
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                alt="KD Team Engineer"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-9 bg-gradient-to-t from-black/60 to-transparent backdrop-blur-[2px] flex items-center justify-center">
+                <span className="text-[10px] font-bold text-white tracking-wide">
+                  Mihir Gandhi
                 </span>
               </div>
-            );
-          })}
+            </div>
+          </div>
+
+          {/* 5. TOP-RIGHT SQUIRCLE: Red/Coral Security Icon (CCTV Surveillance) */}
+          <div className="absolute right-[30%] sm:right-[32%] top-[10%] sm:top-[12%] z-10 animate-float-delayed">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center text-white shadow-lg shadow-red-500/30 hover:scale-110 transition-transform"
+              title="Security & CCTV Surveillance"
+            >
+              <Zap className="w-6 h-6" />
+            </div>
+          </div>
+
+          {/* 6. BOTTOM-RIGHT SQUIRCLE: White Surveillance Eyes Card */}
+          <div className="absolute right-[30%] sm:right-[32%] bottom-[10%] sm:bottom-[12%] z-10 animate-float-slow">
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white border border-slate-200/90 flex items-center justify-center text-slate-800 shadow-lg shadow-slate-200/60 hover:scale-110 transition-transform"
+              title="24/7 Monitoring & AMC"
+            >
+              <Eye className="w-6 h-6 text-orange-600" />
+            </div>
+          </div>
+
+          {/* 7. RIGHT FLOATING PHOTO: Operations / Client Satisfaction Card */}
+          <div className="absolute right-[6%] sm:right-[10%] top-[25%] z-10 hidden sm:block animate-float-slow">
+            <div className="w-24 h-28 rounded-2xl overflow-hidden border-2 border-white shadow-[0_15px_30px_rgba(0,0,0,0.08)] relative group">
+              <Image
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
+                alt="Client Operations"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-9 bg-gradient-to-t from-black/60 to-transparent backdrop-blur-[2px] flex items-center justify-center">
+                <span className="text-[10px] font-bold text-white tracking-wide">
+                  Client Partner
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* MAIN DISPLAY TYPOGRAPHY (Exactly like CoreShift in frame_004.jpg) */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-100/80 text-orange-700 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+            <span>Smart Infrastructure, Strong Future</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.1]">
+            All-in-one infrastructure & <br className="hidden sm:inline" />
+            security platform
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
+            KD Enterprises is a modern contracting platform designed to integrate security systems, IT networking, civil works, and metal fabrication under one roof.
+          </p>
+
+          {/* Coral / Orange Pill CTA Button (Like Request a Demo in frame_004.jpg) */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-orange-500 via-orange-600 to-rose-500 hover:from-orange-600 hover:to-rose-600 shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all transform hover:scale-105 active:scale-95"
+            >
+              <span>Request Free Consultation</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href={companyInfo.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-all"
+            >
+              <span>Instant WhatsApp Inquiry</span>
+            </a>
+          </div>
+
+          <div className="pt-3 text-xs text-slate-500 font-semibold uppercase tracking-wider">
+            {companyInfo.coverSlogan}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
