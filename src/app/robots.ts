@@ -9,3 +9,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "https://kdenterprises.in/sitemap.xml",
   };
 }
+
