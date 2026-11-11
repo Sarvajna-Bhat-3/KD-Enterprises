@@ -1,7 +1,10 @@
 "use client";
 
+import steelFabricationImg from "@/assets/steel-fabrication.jpg";
+import civilWorksImg from "@/assets/civil-works.jpg";
+
 import React from "react";
-import Image from "next/image";
+import { Image } from "@/components/site/Image";
 import { companyInfo } from "@/data/companyData";
 import {
   ShieldCheck,
@@ -28,7 +31,7 @@ export const About = () => {
     {
       title: "Structural Civil Works",
       desc: "RCC Column Retrofitting",
-      image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=500&q=80",
+      image: civilWorksImg,
       anim: "animate-float-fast",
     },
   ];
@@ -37,7 +40,7 @@ export const About = () => {
     {
       title: "Steel Fabrication",
       desc: "MS/SS Industrial Trusses",
-      image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=80",
+      image: steelFabricationImg,
       anim: "animate-float-delayed",
     },
     {
@@ -54,13 +57,11 @@ export const About = () => {
     },
   ];
 
-  const allCards = [...leftCards, ...rightCards];
-
   return (
-    <section id="solutions" className="w-full py-20 sm:py-28 md:py-36 bg-[#f8fafc] text-slate-900 relative overflow-hidden border-b border-slate-100">
+    <section id="solutions" className="w-full py-20 md:py-32 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-100">
       <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Symmetrical Column of Floating Photo Cards (Desktop) */}
+          {/* Left Symmetrical Column of Floating Photo Cards */}
           <div className="lg:col-span-3 hidden lg:flex flex-col gap-6 2xl:gap-8">
             {leftCards.map((c, i) => (
               <div
@@ -91,25 +92,24 @@ export const About = () => {
           </div>
 
           {/* Center Column: Core Content */}
-          <div className="lg:col-span-6 text-center space-y-6 px-2 sm:px-6">
+          <div className="lg:col-span-6 text-center space-y-6 px-2 sm:px-8">
             {/* Center Little Squircle Icon */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center mx-auto shadow-xl shadow-orange-500/25"
+              className="w-16 h-16 rounded-[22px] bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center mx-auto shadow-xl shadow-orange-500/25"
             >
-              <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8" />
+              <ShieldCheck className="w-8 h-8" />
             </motion.div>
 
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]"
+              className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]"
             >
-              Integrated multi-trade <br />
-              solutions
+              Integrated multi&#8209;trade solutions
             </motion.h2>
 
             <motion.p
@@ -117,87 +117,63 @@ export const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-sm sm:text-base md:text-lg text-slate-600 max-w-lg mx-auto leading-relaxed"
+              className="text-base sm:text-lg text-slate-600 max-w-lg mx-auto leading-relaxed"
             >
-              Streamline security, networking, civil repairs, and metal fabrication under one centralized partner, eliminating the chaos of multiple sub-contractors.
+              {companyInfo.about.description}
             </motion.p>
+
+            {/* Photo strip for phones & tablets (side columns appear on large screens) */}
+            <div className="lg:hidden -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:grid sm:grid-cols-3 gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+              {[...leftCards, ...rightCards].map((c) => (
+                <div
+                  key={c.title}
+                  className="relative shrink-0 w-[62%] sm:w-auto snap-start aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 bg-slate-100"
+                >
+                  <Image src={c.image} alt={c.title} fill className="object-cover" />
+                  <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/75 to-transparent text-left">
+                    <span className="block text-xs font-bold text-white">{c.title}</span>
+                    <span className="block text-[11px] text-white/80">{c.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
             {/* Pill CTA Button */}
             <div className="pt-2">
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 transition-all transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 transition-all transform hover:scale-105 active:scale-95"
               >
-                <span>Explore All Services</span>
+                <span>Explore our services</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Mobile & Tablet Smooth Touch Carousel for the 6 Cards */}
-            <div className="lg:hidden pt-4">
-              <div className="text-left mb-2 px-1 flex items-center justify-between">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                  Featured Capabilities
-                </span>
-                <span className="text-[10px] text-orange-600 font-bold">
-                  Swipe horizontally →
-                </span>
-              </div>
-              <div className="flex overflow-x-auto no-scrollbar gap-3.5 pb-2 -mx-2 px-2 snap-x snap-mandatory">
-                {allCards.map((c, i) => (
-                  <div
-                    key={i}
-                    className="shrink-0 w-48 sm:w-56 snap-start bg-white p-2.5 rounded-[22px] border border-slate-200/90 shadow-sm"
-                  >
-                    <div className="relative h-28 sm:h-32 w-full rounded-[16px] overflow-hidden">
-                      <Image
-                        src={c.image}
-                        alt={c.title}
-                        fill
-                        sizes="240px"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/80 to-transparent flex items-center px-3">
-                        <span className="text-[11px] font-bold text-white tracking-wide truncate">
-                          {c.title}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="pt-2 pb-1 text-center">
-                      <span className="text-[10px] font-semibold text-slate-500 block truncate">
-                        {c.desc}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Vision & Mission Squircles */}
-            <div className="pt-4 sm:pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
-              <div className="p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+            <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+              <div className="p-6 rounded-[24px] bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2 text-orange-600 font-bold text-xs uppercase tracking-wider mb-2">
                   <Eye className="w-4 h-4" />
                   <span>Our Vision</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {companyInfo.about.vision}
                 </p>
               </div>
 
-              <div className="p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+              <div className="p-6 rounded-[24px] bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2 text-orange-600 font-bold text-xs uppercase tracking-wider mb-2">
                   <Target className="w-4 h-4" />
                   <span>Our Mission</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {companyInfo.about.mission}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Symmetrical Column of Floating Photo Cards (Desktop) */}
+          {/* Right Symmetrical Column of Floating Photo Cards */}
           <div className="lg:col-span-3 hidden lg:flex flex-col gap-6 2xl:gap-8">
             {rightCards.map((c, i) => (
               <div

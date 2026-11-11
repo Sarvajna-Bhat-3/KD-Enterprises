@@ -43,20 +43,15 @@ export const metadata: Metadata = {
     "painting contractor",
   ],
   authors: [{ name: "Mihir Gandhi - KD Enterprises" }],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "KD Enterprises | Reliable Solutions. Quality Work. Professional Service.",
     description:
       "Integrated contracting solutions across Security Systems, Electrical & Networking, Civil Works, and Structural Fabrication in Mumbai.",
     url: "https://kdenterprises.in",
     siteName: "KD Enterprises",
-    images: [
-      {
-        url: "/images/kd-card-front.jpg",
-        width: 800,
-        height: 500,
-        alt: "KD Enterprises - Mihir Gandhi",
-      },
-    ],
     locale: "en_IN",
     type: "website",
   },
@@ -73,7 +68,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-50 text-slate-800 antialiased min-h-screen">
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-white text-slate-800 antialiased min-h-screen">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
@@ -83,3 +87,4 @@ export default function RootLayout({
     </html>
   );
 }
+

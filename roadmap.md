@@ -1,0 +1,14 @@
+# Polish pass (client handoff)
+- [x] Brand logo mark + favicon (from visiting card)
+- [x] Font upgrade, balanced headings, focus states, reduced motion, anchor offset
+- [x] Navbar: no wrapping, correct links/active states, mobile CTA
+- [x] Hero: remove stock "Mihir Gandhi" photo, fix "platform" copy, service chips
+- [x] About: heading wrap, show photos on mobile
+- [x] Partners: replace emojis, fix phone overflow
+- [x] Testimonials: unique section id, initials instead of stock faces, mobile spacing
+- [x] Services + Projects tabs: fit on phones
+- [x] Products: "Inquire" opens WhatsApp with product name
+- [x] FAQ section (data already present)
+- [x] Contact: labels, validation, directions link, areas served instead of card photo
+- [x] Footer: watermark cut-off, icon labels, copy
+- [x] Floating WhatsApp: less intrusive tooltip

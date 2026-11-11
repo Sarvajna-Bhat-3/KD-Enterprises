@@ -1,3 +1,5 @@
+import steelFabricationImg from "@/assets/steel-fabrication.jpg";
+import civilWorksImg from "@/assets/civil-works.jpg";
 export const companyInfo = {
   name: "KD Enterprises",
   shortName: "KD",
@@ -32,6 +34,17 @@ export const companyInfo = {
       "To provide our clients with professional, safe and cost-effective solutions while maintaining high standards of quality, timely execution and customer satisfaction.",
   },
 };
+
+/** WhatsApp chat link with a pre-filled message. */
+export const whatsappWith = (message: string) =>
+  `https://wa.me/${companyInfo.phoneRaw}?text=${encodeURIComponent(message)}`;
+
+/** Google Maps search link for the office address. */
+export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `KD Enterprises, ${companyInfo.address.full}, Maharashtra`,
+)}`;
+
+export const serviceAreas = ["Greater Mumbai", "Navi Mumbai", "Thane", "Palghar", "Raigad", "Across Maharashtra"];
 
 export const serviceCategories = [
   {
@@ -73,7 +86,7 @@ export const serviceCategories = [
     title: "Civil & Infrastructure",
     subtitle: "End-to-end structural engineering, restoration & waterproofing",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80",
+    image: civilWorksImg,
     badge: "Structural Durability",
     services: [
       {
@@ -103,7 +116,7 @@ export const serviceCategories = [
     title: "Fabrication & Engineering",
     subtitle: "Precision metal fabrication, structural trusses and custom engineering",
     icon: "Hammer",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    image: steelFabricationImg,
     badge: "Custom Metalwork",
     services: [
       {
@@ -269,7 +282,7 @@ export const portfolioProjects = [
     category: "Fabrication",
     location: "Industrial Estate, Thane",
     description: "Engineered heavy MS steel trusses, purlins, and galvanized iron sheet roofing with high wind-load tolerance.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80",
+    image: steelFabricationImg,
     tags: ["MS Steel", "Trusses", "Industrial"],
   },
   {
@@ -287,7 +300,7 @@ export const portfolioProjects = [
     category: "Civil",
     location: "Commercial Building, Kurla",
     description: "Concrete jacket retrofitting on aging columns using polymer modified mortar and anti-corrosive rebar treatment.",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=700&q=80",
+    image: civilWorksImg,
     tags: ["RCC", "Column Jacketing", "Structural"],
   },
 ];
