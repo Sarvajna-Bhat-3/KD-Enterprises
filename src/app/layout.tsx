@@ -1,6 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "KD Enterprises",
+  description:
+    "Integrated contracting solutions across CCTV surveillance, access control, IT networking, civil repairs, waterproofing, painting, and structural fabrication in Mumbai and Maharashtra.",
+  founder: {
+    "@type": "Person",
+    name: "Mihir Gandhi",
+  },
+  telephone: "+917208844793",
+  email: "kdenterprises2412@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Office No. 2, Sai Prasad Chawl, Prabhat Colony, Santacruz East",
+    addressLocality: "Mumbai",
+    addressRegion: "Maharashtra",
+    postalCode: "400055",
+    addressCountry: "IN",
+  },
+  openingHours: "Mo-Sa 09:00-20:00",
+  url: "https://kdenterprises.in",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://kdenterprises.in"),
   title: "KD Enterprises | Security, Infrastructure, Civil & Engineering Solutions",
@@ -50,6 +74,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-800 antialiased min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
         {children}
       </body>
     </html>

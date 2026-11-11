@@ -54,7 +54,7 @@ export const Testimonials = () => {
   const nextReview = reviews[(currentIndex + 1) % reviews.length];
 
   return (
-    <section id="why-us" className="w-full py-28 md:py-36 bg-[#f8fafc] text-slate-900 relative overflow-hidden border-b border-slate-100">
+    <section id="testimonials" className="w-full py-28 md:py-36 bg-[#f8fafc]] text-slate-900 relative overflow-hidden border-b border-slate-100">
       <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 text-center">
         {/* Title */}
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.1]">

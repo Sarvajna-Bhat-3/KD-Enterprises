@@ -3,16 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { companyInfo } from "@/data/companyData";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  MessageCircle,
-  Send,
-  CheckCircle2,
-  Clock,
-  Sparkles,
-} from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Send, CircleCheck as CheckCircle2, Clock, Sparkles } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -156,7 +147,7 @@ export const Contact = () => {
 
             {/* Quick Visiting Card View */}
             <div className="bg-white border border-slate-200 rounded-[28px] p-5 flex items-center gap-4 shadow-sm">
-              <div className="relative w-28 h-18 rounded-2xl overflow-hidden border border-slate-300 shrink-0 shadow-sm">
+              <div className="relative w-28 h-20 rounded-2xl overflow-hidden border border-slate-300 shrink-0 shadow-sm">
                 <Image
                   src="/images/kd-card-back.jpg"
                   alt="KD Enterprises Services Card"
@@ -208,10 +199,11 @@ export const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Name */}
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Your Full Name *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={formData.name}
@@ -225,10 +217,11 @@ export const Contact = () => {
 
                     {/* Phone Number */}
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      <label htmlFor="contact-phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Phone Number *
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         required
                         value={formData.phone}
@@ -244,10 +237,11 @@ export const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Email */}
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Email Address (Optional)
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         value={formData.email}
                         onChange={(e) =>
@@ -277,10 +271,11 @@ export const Contact = () => {
 
                   {/* Primary Service Selection */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <label htmlFor="contact-service" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                       Primary Service Needed *
                     </label>
                     <select
+                      id="contact-service"
                       value={formData.service}
                       onChange={(e) =>
                         setFormData({ ...formData, service: e.target.value })
@@ -339,7 +334,7 @@ export const Contact = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-3 py-4 rounded-full font-bold text-base text-white bg-gradient-to-r from-orange-500 via-orange-600 to-rose-500 hover:from-orange-600 hover:to-rose-600 shadow-xl shadow-orange-500/25 transition-all transform hover:scale-[1.01] active:scale-98 cursor-pointer"
+                    className="w-full flex items-center justify-center gap-3 py-4 rounded-full font-bold text-base text-white bg-gradient-to-r from-orange-500 via-orange-600 to-rose-500 hover:from-orange-600 hover:to-rose-600 shadow-xl shadow-orange-500/25 transition-all transform hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
                   >
                     <Send className="w-5 h-5" />
                     <span>Submit & Connect on WhatsApp</span>

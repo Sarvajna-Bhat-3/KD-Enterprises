@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { companyInfo } from "@/data/companyData";
-import { Logo } from "./Logo";
 import {
   Menu,
   X,
@@ -18,7 +17,7 @@ export const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const navLinks = [
-    { name: "Product", href: "#solutions" },
+    { name: "About", href: "#solutions" },
     { name: "Services", href: "#services" },
     { name: "Partners", href: "#partners" },
     { name: "Projects", href: "#projects" },
@@ -27,7 +26,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "solutions", "services", "partners", "projects", "why-us", "contact"];
+      const sections = ["home", "solutions", "services", "partners", "projects", "why-us", "testimonials", "contact"];
       const scrollY = window.scrollY;
 
       for (const section of sections) {
@@ -57,10 +56,10 @@ export const Navbar = () => {
       >
         {/* Brand Logo */}
         <Link href="#home" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-xl bg-orange-600 flex items-center justify-center text-white font-black text-sm shadow-md shadow-orange-600/30 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 shrink-0 rounded-xl bg-orange-600 flex items-center justify-center text-white font-black text-sm shadow-md shadow-orange-600/30 group-hover:scale-105 transition-transform">
             KD
           </div>
-          <span className="font-extrabold text-lg text-slate-950 tracking-tight">
+          <span className="hidden xs:inline font-extrabold text-lg text-slate-950 tracking-tight">
             KD<span className="text-orange-600 font-semibold text-xs ml-1 tracking-widest uppercase">Enterprises</span>
           </span>
         </Link>

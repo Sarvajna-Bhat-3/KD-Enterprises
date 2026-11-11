@@ -186,7 +186,7 @@ export const Footer = () => {
 
       {/* HUGE BLURRED GLOW WATERMARK TEXT ACROSS FULL EDGE-TO-EDGE SCREEN WIDTH */}
       <div className="mt-8 select-none pointer-events-none overflow-hidden w-full flex justify-center items-center">
-        <span className="text-[14vw] font-black text-orange-500/12 blur-[3px] tracking-tighter leading-none whitespace-nowrap uppercase w-full text-center">
+        <span className="text-[14vw] font-black text-orange-500/10 blur-[3px] tracking-tighter leading-none whitespace-nowrap uppercase w-full text-center">
           KD Enterprises
         </span>
       </div>

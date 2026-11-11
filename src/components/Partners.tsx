@@ -15,56 +15,56 @@ export const Partners = () => {
       name: "Hikvision",
       category: "CCTV & Video Surveillance",
       desc: "Enterprise 4K IP cameras, ColorVu night vision & high-capacity NVRs.",
-      icon: "📹",
+      initials: "HV",
     },
     {
       id: "honeywell",
       name: "Honeywell",
       category: "Automation & Access Control",
       desc: "Smart perimeter sensors, intrusion alarm systems & building automation.",
-      icon: "🏢",
+      initials: "HW",
     },
     {
       id: "samsung",
       name: "Samsung",
       category: "Commercial Displays & AV",
       desc: "Command center video walls, interactive panels & smart digital signage.",
-      icon: "📺",
+      initials: "SM",
     },
     {
       id: "dlink",
       name: "D-Link",
       category: "Enterprise LAN & Switching",
       desc: "Gigabit managed PoE+ switches, server racks & structured Cat6 cabling.",
-      icon: "🌐",
+      initials: "DL",
     },
     {
       id: "schneider",
       name: "Schneider Electric",
       category: "Power & Structured Cabling",
       desc: "Industrial power distribution, circuit breakers & cable management.",
-      icon: "⚡",
+      initials: "SE",
     },
     {
       id: "tplink",
       name: "TP-Link",
       category: "Wireless & Mesh Networking",
       desc: "Omada cloud-managed Wi-Fi 6 access points & optical fiber converters.",
-      icon: "📡",
+      initials: "TP",
     },
     {
       id: "axis",
       name: "Axis Communications",
       category: "High-End Network Cameras",
       desc: "Thermal imaging, license plate recognition & PTZ dome optics.",
-      icon: "🔍",
+      initials: "AX",
     },
     {
       id: "legrand",
       name: "Legrand",
       category: "Electrical & Server Racks",
       desc: "Patch panels, floor boxes, cable raceways & high-density patch cords.",
-      icon: "🔌",
+      initials: "LG",
     },
   ];
 
@@ -151,8 +151,14 @@ export const Partners = () => {
                   }`}
                   style={{ zIndex: styles.zIndex || 1 }}
                 >
-                  <span className="text-3xl sm:text-5xl filter drop-shadow-sm mb-1.5">
-                    {brand.icon}
+                  <span
+                    className={`text-base sm:text-xl font-black tracking-tight flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mb-2 ${
+                      isCenter
+                        ? "bg-orange-600 text-white shadow-md shadow-orange-600/30"
+                        : "bg-slate-100 text-slate-700"
+                    }`}
+                  >
+                    {brand.initials}
                   </span>
                   <span className="text-xs sm:text-sm font-black text-slate-900 tracking-tight text-center line-clamp-1">
                     {brand.name}

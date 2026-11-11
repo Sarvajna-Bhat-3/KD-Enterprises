@@ -95,7 +95,7 @@ export const Hero = () => {
           {/* 2. TOP-LEFT: Yellow Lightbulb (Engineering Ideas) */}
           <div className="absolute left-[26%] sm:left-[28%] top-[8%] sm:top-[10%] z-10 animate-float-slow">
             <div
-              className="w-13 h-13 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-amber-300 to-amber-400 flex items-center justify-center text-amber-950 shadow-lg shadow-amber-300/30 hover:scale-110 transition-transform"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-amber-300 to-amber-400 flex items-center justify-center text-amber-950 shadow-lg shadow-amber-300/30 hover:scale-110 transition-transform"
               title="Innovative Civil & Engineering Ideas"
             >
               <Lightbulb className="w-7 h-7" />
@@ -105,7 +105,7 @@ export const Hero = () => {
           {/* 3. BOTTOM-LEFT: Cyan Water/Shield (Waterproofing & Infrastructure) */}
           <div className="absolute left-[26%] sm:left-[28%] bottom-[8%] sm:bottom-[10%] z-10 animate-float-delayed">
             <div
-              className="w-13 h-13 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-cyan-400/30 hover:scale-110 transition-transform"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-cyan-400/30 hover:scale-110 transition-transform"
               title="Waterproofing & Concrete Rehabilitation"
             >
               <Building2 className="w-7 h-7" />
@@ -117,7 +117,7 @@ export const Hero = () => {
             <div className="w-28 h-32 rounded-[24px] overflow-hidden border-2 border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] relative group">
               <Image
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
-                alt="KD Team Engineer"
+                alt="KD team engineer on site"
                 fill
                 priority
                 sizes="(max-width: 768px) 100px, 120px"
@@ -125,7 +125,7 @@ export const Hero = () => {
               />
               <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/70 to-transparent backdrop-blur-[2px] flex items-center justify-center">
                 <span className="text-[11px] font-bold text-white tracking-wide">
-                  Mihir Gandhi
+                  Site Engineer
                 </span>
               </div>
             </div>
@@ -134,7 +134,7 @@ export const Hero = () => {
           {/* 5. TOP-RIGHT: Red/Coral Security Icon (CCTV Surveillance) */}
           <div className="absolute right-[26%] sm:right-[28%] top-[8%] sm:top-[10%] z-10 animate-float-delayed">
             <div
-              className="w-13 h-13 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center text-white shadow-lg shadow-red-500/30 hover:scale-110 transition-transform"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center text-white shadow-lg shadow-red-500/30 hover:scale-110 transition-transform"
               title="Security & CCTV Surveillance"
             >
               <Zap className="w-7 h-7" />
@@ -144,7 +144,7 @@ export const Hero = () => {
           {/* 6. BOTTOM-RIGHT: White Surveillance Eyes Card */}
           <div className="absolute right-[26%] sm:right-[28%] bottom-[8%] sm:bottom-[10%] z-10 animate-float-slow">
             <div
-              className="w-13 h-13 sm:w-16 sm:h-16 rounded-[22px] bg-white border border-slate-200/90 flex items-center justify-center text-slate-800 shadow-lg shadow-slate-200/60 hover:scale-110 transition-transform"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-[22px] bg-white border border-slate-200/90 flex items-center justify-center text-slate-800 shadow-lg shadow-slate-200/60 hover:scale-110 transition-transform"
               title="24/7 Monitoring & AMC"
             >
               <Eye className="w-7 h-7 text-orange-600" />
@@ -156,7 +156,7 @@ export const Hero = () => {
             <div className="w-28 h-32 rounded-[24px] overflow-hidden border-2 border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] relative group">
               <Image
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-                alt="Client Operations"
+                alt="Client consultation"
                 fill
                 priority
                 sizes="(max-width: 768px) 100px, 120px"
