@@ -16,21 +16,21 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="min-h-screen bg-[#ECEEF1] p-0 sm:p-4 lg:p-6 flex flex-col items-center">
+      <div className="min-h-screen w-full bg-white text-slate-900 flex flex-col selection:bg-orange-500 selection:text-white">
         <Navbar />
 
-        {/* Main Dribbble Canvas Card Container with Rounded Outer Frame */}
-        <main className="w-full max-w-[1400px] bg-white sm:rounded-[40px] overflow-hidden shadow-[0_25px_90px_rgba(0,0,0,0.06)] border border-slate-200/90 flex flex-col">
-          {/* 1. Hero with Connected Node Tree (frame_004.jpg) */}
+        {/* Edge-to-Edge Full Screen Width Main Layout */}
+        <main className="w-full flex flex-col flex-1">
+          {/* 1. Hero with Connected Node Tree */}
           <Hero />
 
-          {/* 2. Symmetrical Floating Photo Mosaic (frame_008.jpg) */}
+          {/* 2. Symmetrical Floating Photo Mosaic */}
           <About />
 
-          {/* 3. Interactive Brand Arc Carousel (frame_011.jpg) */}
+          {/* 3. Interactive Brand Arc Carousel */}
           <Partners />
 
-          {/* 4. Words of Appreciation 3D Tilted Card Carousel (frame_026.jpg) */}
+          {/* 4. Words of Appreciation 3D Tilted Card Carousel */}
           <Testimonials />
 
           {/* 5. Core Capabilities & Services */}
@@ -48,7 +48,7 @@ export default function Home() {
           {/* 9. Interactive Consultation & WhatsApp Lead Generation */}
           <Contact />
 
-          {/* 10. Minimalist Footer with Huge Blurred Watermark (frame_015.jpg) */}
+          {/* 10. Minimalist Footer with Full-Width Blurred Watermark */}
           <Footer />
         </main>
 
