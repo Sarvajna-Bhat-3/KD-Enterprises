@@ -8,18 +8,16 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({
   className = "h-12",
-  variant = "dark",
+  variant = "light",
   showTagline = false,
 }) => {
-  const isDark = variant === "dark";
-  const textColor = isDark ? "#ffffff" : "#0f172a";
-  const subtextColor = isDark ? "#cbd5e1" : "#475569";
-  const orange = "#f97316"; // Brand orange
-  const darkOrange = "#ea580c";
+  const isDarkBg = variant === "dark";
+  const textColor = isDarkBg ? "#ffffff" : "#0f172a";
+  const subtextColor = isDarkBg ? "#94a3b8" : "#475569";
 
   return (
-    <div className={`flex flex-col items-center select-none ${className}`}>
-      <div className="flex items-center gap-3">
+    <div className={`flex flex-col select-none ${className}`}>
+      <div className="flex items-center gap-2.5">
         {/* Vector Mark */}
         <div className="relative w-11 h-11 flex items-center justify-center">
           <svg
@@ -44,8 +42,8 @@ export const Logo: React.FC<LogoProps> = ({
             <circle cx="84" cy="68" r="4" fill="#fb923c" />
             <path
               d="M84 60 L84 76 M76 68 L92 68"
-              stroke="#fdba74"
-              strokeWidth="2"
+              stroke="#ea580c"
+              strokeWidth="2.5"
               strokeLinecap="round"
             />
 
@@ -59,15 +57,15 @@ export const Logo: React.FC<LogoProps> = ({
 
           {/* KD Letters in center */}
           <div className="absolute inset-0 flex items-center justify-center font-black tracking-tighter text-xl">
-            <span className="text-orange-500 font-extrabold">K</span>
-            <span className={isDark ? "text-white" : "text-slate-900"}>D</span>
+            <span className="text-orange-600 font-extrabold">K</span>
+            <span className={isDarkBg ? "text-white" : "text-slate-900"}>D</span>
           </div>
         </div>
 
         {/* Text Title */}
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5 leading-none">
-            <span className="font-black text-2xl tracking-wider text-orange-500">KD</span>
+            <span className="font-black text-2xl tracking-wider text-orange-600">KD</span>
             <span
               className="font-extrabold text-2xl tracking-wider"
               style={{ color: textColor }}
@@ -76,20 +74,20 @@ export const Logo: React.FC<LogoProps> = ({
             </span>
           </div>
           <div className="flex items-center gap-2 mt-1">
-            <span className="h-[1.5px] w-5 bg-orange-500"></span>
+            <span className="h-[1.5px] w-4 bg-orange-500"></span>
             <span
               className="text-[10px] uppercase font-bold tracking-widest"
               style={{ color: subtextColor }}
             >
               Security • Civil • Fabrication
             </span>
-            <span className="h-[1.5px] w-5 bg-orange-500"></span>
+            <span className="h-[1.5px] w-4 bg-orange-500"></span>
           </div>
         </div>
       </div>
 
       {showTagline && (
-        <span className="text-[11px] text-orange-400 font-medium italic mt-1 tracking-wide">
+        <span className="text-[11px] text-orange-600 font-semibold italic mt-1 tracking-wide">
           Turning Ideas Into Reality...
         </span>
       )}

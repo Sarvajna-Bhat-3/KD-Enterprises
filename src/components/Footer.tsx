@@ -180,3 +180,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

@@ -13,7 +13,7 @@ import { FloatingActions } from "@/components/FloatingActions";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white selection:bg-orange-500 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-orange-500 selection:text-white">
       <Navbar />
       <Hero />
       <About />

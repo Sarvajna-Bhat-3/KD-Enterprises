@@ -60,3 +60,4 @@ export const FloatingActions = () => {
     </div>
   );
 };
+
